@@ -29,8 +29,8 @@ if __name__ == "__main__":
                                                                                                     'bert-base-multilingual-uncased'\
                                                                                                     'bert-base-multilingual-cased'")
     parser.add_argument("--pretrain", type=int, default=0, help="0: MTB pre-training, 1: fine-tuning")                                                                                                
-    parser.add_argument("--train", type=int, default=1, help="0: Don't train, 1: train")
-    parser.add_argument("--eval", type=int, default=0, help="0: Don't eval, 1: eval")
+    parser.add_argument("--train", type=int, default=0, help="0: Don't train, 1: train")
+    parser.add_argument("--eval", type=int, default=1, help="0: Don't eval, 1: eval")
     
     args = parser.parse_args()
 
