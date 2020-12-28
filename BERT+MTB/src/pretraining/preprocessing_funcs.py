@@ -17,6 +17,7 @@ from torch.nn.utils.rnn import pad_sequence
 from .misc import save_as_pickle, load_pickle, get_subject_objects
 from tqdm import tqdm
 import logging
+from model.tokenization_bert import BertTokenizer as Tokenizer
 
 tqdm.pandas(desc="prog_bar")
 logging.basicConfig(format='%(asctime)s [%(levelname)s]: %(message)s', \
@@ -53,8 +54,8 @@ def create_pretraining_corpus(raw_text, nlp, window_size=40):
     ents = sents_doc.ents # get entities
     
     logger.info("Processing relation statements by entities...")
-    entities_of_interest = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT", \
-                            "WORK_OF_ART", "LAW", "LANGUAGE"]
+    #limit entites to specific types
+    entities_of_interest = ["PERSON", "NORP", "FAC", "ORG", "GPE", "LOC", "PRODUCT", "EVENT"]
     length_doc = len(sents_doc)
     D = []; ents_list = []
     for i in tqdm(range(len(ents))):
@@ -176,35 +177,20 @@ class pretrain_dataset(Dataset):
         self.e1s = list(self.df['e1'].unique())
         self.e2s = list(self.df['e2'].unique())
         
-        if args.model_no == 0:
-            from .model.BERT.tokenization_bert import BertTokenizer as Tokenizer
-            model = args.model_size #'bert-base-uncased'
-            lower_case = True
-            model_name = 'BERT'
-        elif args.model_no == 1:
-            from .model.ALBERT.tokenization_albert import AlbertTokenizer as Tokenizer
-            model = args.model_size #'albert-base-v2'
-            lower_case = False
-            model_name = 'ALBERT'
-        elif args.model_no == 2:
-            from .model.BERT.tokenization_bert import BertTokenizer as Tokenizer
-            model = 'bert-base-uncased'
-            lower_case = False
-            model_name = 'BioBERT'
         
-        tokenizer_path = './data/%s_tokenizer.pkl' % (model_name)
+        model = args.model_size #'bert-base-uncased'
+        lower_case = True
+        model_name = 'BERT'
+        
+        tokenizer_path = './data/BERT_tokenizer.pkl'
         if os.path.isfile(tokenizer_path):
-            self.tokenizer = load_pickle('%s_tokenizer.pkl' % (model_name))
+            self.tokenizer = load_pickle('BERT_tokenizer.pkl')
             logger.info("Loaded tokenizer from saved path.")
         else:
-            if args.model_no == 2:
-                self.tokenizer = Tokenizer(vocab_file='./additional_models/biobert_v1.1_pubmed/vocab.txt',
-                                           do_lower_case=False)
-            else:
-                self.tokenizer = Tokenizer.from_pretrained(model, do_lower_case=False)
+            self.tokenizer = Tokenizer.from_pretrained(model, do_lower_case=False)
             self.tokenizer.add_tokens(['[E1]', '[/E1]', '[E2]', '[/E2]', '[BLANK]'])
-            save_as_pickle("%s_tokenizer.pkl" % (model_name), self.tokenizer)
-            logger.info("Saved %s tokenizer at ./data/%s_tokenizer.pkl" % (model_name, model_name))
+            save_as_pickle("BERT_tokenizer.pkl", self.tokenizer)
+            logger.info("Saved BERT tokenizer at ./data/BERT_tokenizer.pkl")
         
         e1_id = self.tokenizer.convert_tokens_to_ids('[E1]')
         e2_id = self.tokenizer.convert_tokens_to_ids('[E2]')
@@ -430,14 +416,5 @@ def load_dataloaders(args, max_length=50000):
         
     train_set = pretrain_dataset(args, D, batch_size=args.batch_size)
     train_length = len(train_set)
-    '''
-    # if using fixed batching
-    PS = Pad_Sequence(seq_pad_value=train_set.tokenizer.pad_token_id,\
-                      label_pad_value=train_set.tokenizer.pad_token_id,\
-                      label2_pad_value=-1,\
-                      label3_pad_value=-1,\
-                      label4_pad_value=-1)
-    train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, \
-                              num_workers=0, collate_fn=PS, pin_memory=False)
-    '''
+
     return train_set

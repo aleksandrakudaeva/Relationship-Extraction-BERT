@@ -22,11 +22,11 @@ Comment:
 Other
 Comment: 
 
-6   "Gegenwärtig ist man der Ansicht, dass die chronische <e1>Entzündung</e1> im distalen Teil des Magens, die durch eine Helicobacter <e2>pylori-Infektion</e2> verursacht wird, zu einer erhöhten Säureproduktion aus der nicht infizierten oberen Korpusregion des Magens führt."
+6   "Gegenwärtig ist man der Ansicht, dass die chronische <e1>Entzündung</e1> im distalen Teil des Magens, die durch eine Helicobacter-pylori <e2>Infektion</e2> verursacht wird, zu einer erhöhten Säureproduktion aus der nicht infizierten oberen Korpusregion des Magens führt."
 Cause-Effect(e2,e1)
 Comment: 
 
-7   "Die <e1>Menschen</e1> sind wieder in die Innenstadt <e2>gezogen</e2>."
+7   "Die <e1>Menschen</e1> sind wieder in die <e2>Innenstadt</e2> gezogen."
 Entity-Destination(e1,e2)
 Comment: 
 
@@ -42,7 +42,7 @@ Comment:
 Member-Collection(e2,e1)
 Comment: 
 
-11   "Ihr <e1>Komponist</e1> ist in Vergessenheit <e2>geraten</e2>."
+11   "Ihr <e1>Komponist</e1> ist in <e2>Vergessenheit</e2> geraten."
 Other
 Comment: 
 
@@ -54,7 +54,7 @@ Comment:
 Cause-Effect(e2,e1)
 Comment: 
 
-14   "Sogar kommerzielle <e1>Sender</e1> sind zur hochauflösenden <e2>Übertragung</e2> übergegangen."
+14   "Sogar kommerzielle <e1>Sender</e1> sind zur <e2>hochauflösenden Übertragung</e2> übergegangen."
 Instrument-Agency(e2,e1)
 Comment: 
 
@@ -62,7 +62,7 @@ Comment:
 Message-Topic(e1,e2)
 Comment: 
 
-16   "In Texas geborener <e1>Virtuose</e1> findet Harmonie, Raffinesse im Instrument aus den <e2>Appalachen</e2>."
+16   "In Texas geborener <e1>Virtuose</e1> findet Harmonie, Raffinesse im <e2>Instrument</e2> aus den Appalachen."
 Instrument-Agency(e2,e1)
 Comment: 
 
@@ -106,7 +106,7 @@ Comment:
 Message-Topic(e1,e2)
 Comment: 
 
-27   "Deshalb haben wir die Initiative ergriffen, das erste internationale offene <e1>Treffen</e1> einzuberufen, das ausschließlich der Geschichte des ländlichen <e2>Raums</e2> gewidmet ist."
+27   "Deshalb haben wir die Initiative ergriffen, das erste internationale offene <e1>Treffen</e1> einzuberufen, das ausschließlich der <e2>Geschichte des ländlichen Raums</e2> gewidmet ist."
 Message-Topic(e1,e2)
 Comment: 
 
@@ -154,7 +154,7 @@ Comment:
 Cause-Effect(e1,e2)
 Comment: 
 
-39   "Der <e1>Sender</e1> wurde in einem <e2>Bettsofa</e2> entdeckt, auf dem er gesessen hatte."
+39   "Der <e1>Sender</e1> wurde in einem Bettsofa <e2>Suite</e2> entdeckt, auf dem er gesessen hatte."
 Content-Container(e1,e2)
 Comment: 
 
@@ -162,7 +162,7 @@ Comment:
 Member-Collection(e2,e1)
 Comment: 
 
-41   "Ein Student des St. Paul <e1>College</e1> wurde am Mittwochabend aus dem <e2>Gefängnis</e2> entlassen, nachdem er am Dienstag wegen der mutmaßlichen Vergewaltigung einer anderen Studentin auf dem Campus verhaftet worden war."
+41   "Ein <e1>Student</e1> des St. Paul College wurde am Mittwochabend aus dem <e2>Gefängnis</e2> entlassen, nachdem er am Dienstag wegen der mutmaßlichen Vergewaltigung einer anderen Studentin auf dem Campus verhaftet worden war."
 Entity-Origin(e1,e2)
 Comment: 
 
@@ -183,7 +183,7 @@ Cause-Effect(e2,e1)
 Comment: 
 
 46   "Die folgenden Informationen erschienen in den <e1>Anmerkungen</e1> zu konsolidierten <e2>Jahresabschlüssen</e2> einiger Jahresberichte von Unternehmen."
-Other
+Component-Whole(e1,e2)
 Comment: 
 
 47   "HipHop eignet sich die Symbole einer Konsumgesellschaft an: es werden überdimensionale <e1>Diamanten</e1> <e2>Colliers</e2> getragen."
@@ -222,7 +222,7 @@ Comment:
 Content-Container(e1,e2)
 Comment: 
 
-56   "Meine größte <e1>Meinungsverschiedenheit</e1> mit Lyons betrifft den kausalen <e2>Teil</e2> seiner Theorie."
+56   "Meine größte <e1>Meinungsverschiedenheit</e1> mit Lyons betrifft den <e2>kausalen Teil</e2> seiner Theorie."
 Other
 Comment: 
 
@@ -306,7 +306,7 @@ Comment:
 Cause-Effect(e2,e1)
 Comment: 
 
-77   "Ein Team von Studenten der Virginia Tech University hat ein Fahrzeug entwickelt, mit dem sehbehinderte <e1>Fahrer</e1> die Kontrolle über das Lenkrad übernehmen <e2>können</e2>."
+77   "Ein Team von Studenten der Virginia Tech University hat ein Fahrzeug entwickelt, mit dem sehbehinderte <e1>Fahrer</e1> die Kontrolle über das <e2>Lenkrad</e2> übernehmen können."
 Instrument-Agency(e2,e1)
 Comment: 
 
@@ -334,7 +334,7 @@ Comment:
 Entity-Destination(e1,e2)
 Comment: 
 
-84   "Historische Ansicht der durch das Erdbeben von <e1>Catania</e1> 1693 verursachten <e2>Schäden</e2> und der Wiederaufbauaktivitäten."
+84   "Historische Ansicht der durch das <e1>Erdbeben</e1> von Catania 1693 verursachten <e2>Schäden</e2> und der Wiederaufbauaktivitäten."
 Cause-Effect(e1,e2)
 Comment: 
 
@@ -370,7 +370,7 @@ Comment:
 Instrument-Agency(e2,e1)
 Comment: 
 
-93   "In der Ecke stehen mehrere Tor-Kapitäne und eine <e1>Legion</e1> von <e2>Wu-Armbrustschützen</e2>."
+93   "In der Ecke stehen mehrere Tor-Kapitäne und eine <e1>Legion</e1> von Wu- <e2>Armbrustschützen</e2>."
 Member-Collection(e2,e1)
 Comment: 
 
@@ -430,10 +430,6 @@ Comment:
 Message-Topic(e1,e2)
 Comment: 
 
-108   "<e1>Kastanienmehl</e1> war vor einem Jahrhundert in den italienischen Alpen weiter verbreitet als <e2>Weizenmehl</e2>."
-Entity-Origin(e2,e1)
-Comment: 
-
 109   "Meine Eltern kauften ihr eine <e1>silberne</e1> <e2>Halskette</e2>, die fast identisch mit der abgebildeten war."
 Other
 Comment: 
@@ -454,15 +450,15 @@ Comment:
 Member-Collection(e2,e1)
 Comment: 
 
-114   "Diese <e1>Entscheidung</e1> war auch Gegenstand einer erfolglosen rechtlichen <e2>Anfechtung</e2>."
+114   "Diese <e1>Entscheidung</e1> war auch Gegenstand einer erfolglosen <e2>rechtlichen Anfechtung</e2>."
 Other
 Comment: 
 
-115   "Die Austrittstemperatur eines <e1>Abflussstroms</e1> aus dem <e2>Niedertemperatur-Dampfreformierungsreaktor</e2> ist nicht höher als 600 C."
+115   "Die Austrittstemperatur eines <e1>Abflussstroms</e1> aus dem Niedertemperatur- <e2>Dampfreformierungsreaktor</e2> ist nicht höher als 600 C."
 Entity-Origin(e1,e2)
 Comment: 
 
-116   "Einzelne <e1>Investoren</e1> zogen in das Anwesen <e2>ein</e2>."
+116   "Einzelne <e1>Investoren</e1> zogen in das <e2>Anwesen</e2> ein."
 Entity-Destination(e1,e2)
 Comment: 
 
@@ -490,7 +486,7 @@ Comment:
 Cause-Effect(e1,e2)
 Comment: 
 
-123   "Chemische <e1>Waffen</e1> wurden in den See <e2>geworfen</e2>."
+123   "Chemische <e1>Waffen</e1> wurden in den <e2>See</e2> geworfen."
 Entity-Destination(e1,e2)
 Comment: 
 
@@ -503,7 +499,7 @@ Component-Whole(e1,e2)
 Comment: 
 
 126   "Der weltweite Verkauf digitaler Musik wächst, da die <e1>Musikindustrie</e1> neue <e2>Geschäftsmodelle</e2> entwickelt."
-Product-Producer(e2,e1)
+Product-Producer(e1,e2)
 Comment: 
 
 127   "Die <e1>Geräte</e1> wurden in der <e2>Fabrik</e2> in Beaverton bis weit in die 1980er Jahre hinein hergestellt, als die Produktion an einen anderen Ort verlagert und Teile der Fabrik verkauft wurden."

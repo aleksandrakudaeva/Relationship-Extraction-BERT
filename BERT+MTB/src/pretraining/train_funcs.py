@@ -99,8 +99,8 @@ def load_state(net, optimizer, scheduler, args, load_best=False):
     """ Loads saved model and optimizer states if exists """
     base_path = "./data/"
     amp_checkpoint = None
-    checkpoint_path = os.path.join(base_path,"test_checkpoint_%d.pth.tar" % args.model_no)
-    best_path = os.path.join(base_path,"test_model_best_%d.pth.tar" % args.model_no)
+    checkpoint_path = os.path.join(base_path,"test_checkpoint_BERT.pth.tar")
+    best_path = os.path.join(base_path,"test_model_best_BERT.pth.tar")
     start_epoch, best_pred, checkpoint = 0, 0, None
     if (load_best == True) and os.path.isfile(best_path):
         checkpoint = torch.load(best_path)
@@ -120,13 +120,13 @@ def load_state(net, optimizer, scheduler, args, load_best=False):
         logger.info("Loaded model and optimizer.")    
     return start_epoch, best_pred, amp_checkpoint
 
-def load_results(model_no=0):
+def load_results():
     """ Loads saved results if exists """
-    losses_path = "./data/test_losses_per_epoch_%d.pkl" % model_no
-    accuracy_path = "./data/test_accuracy_per_epoch_%d.pkl" % model_no
+    losses_path = "./data/test_losses_per_epoch_BERT.pkl"
+    accuracy_path = "./data/test_accuracy_per_epoch_BERT.pkl"
     if os.path.isfile(losses_path) and os.path.isfile(accuracy_path):
-        losses_per_epoch = load_pickle("test_losses_per_epoch_%d.pkl" % model_no)
-        accuracy_per_epoch = load_pickle("test_accuracy_per_epoch_%d.pkl" % model_no)
+        losses_per_epoch = load_pickle("test_losses_per_epoch_BERT.pkl")
+        accuracy_per_epoch = load_pickle("test_accuracy_per_epoch_BERT.pkl")
         logger.info("Loaded results buffer")
     else:
         losses_per_epoch, accuracy_per_epoch = [], []

@@ -15,6 +15,8 @@ if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument("--train_data", type=str, default='./data/German/TRAIN_FILE_DE.TXT', \
                         help="training data .txt file path")
+    parser.add_argument("--pretrain_data", type=str, default='./data/pretraining/TRAIN.TXT', \
+                        help="test data .txt file path")
     parser.add_argument("--test_data", type=str, default='./data/German/TEST_FILE_DE.TXT', \
                         help="test data .txt file path")
     parser.add_argument("--use_pretrained_blanks", type=int, default=0, help="0: Don't use pre-trained blanks model, 1: use pre-trained blanks model")
@@ -25,12 +27,13 @@ if __name__ == "__main__":
     parser.add_argument("--num_epochs", type=int, default=11, help="No of epochs")
     parser.add_argument("--lr", type=float, default=0.00007, help="learning rate")
     parser.add_argument("--model_size", type=str, default='base', help="base or large")
+    parser.add_argument("--freeze", type=int, default=1, help="freeze hidden layers 1, otherwise 0")
     parser.add_argument("--model_name", type=str, default='bert-base-german-dbmdz-uncased', help="'bert-base-uncased', \
                                                                                                     'bert-base-multilingual-uncased'\
                                                                                                     'bert-base-multilingual-cased'")
-    parser.add_argument("--pretrain", type=int, default=0, help="0: MTB pre-training, 1: fine-tuning")                                                                                                
+    parser.add_argument("--pretrain", type=int, default=1, help="0: MTB pre-training, 1: fine-tuning")                                                                                                
     parser.add_argument("--train", type=int, default=0, help="0: Don't train, 1: train")
-    parser.add_argument("--eval", type=int, default=1, help="0: Don't eval, 1: eval")
+    parser.add_argument("--eval", type=int, default=0, help="0: Don't eval, 1: eval")
     
     args = parser.parse_args()
 
